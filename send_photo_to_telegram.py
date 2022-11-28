@@ -1,6 +1,6 @@
-import send_telegram
+import TelegramMessage
 
-message = send_telegram.TelegramMessage
+message = TelegramMessage
 img = "a.jpeg"
 caption = "Cristiano Ronaldo!"
 
