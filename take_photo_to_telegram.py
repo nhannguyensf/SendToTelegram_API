@@ -12,7 +12,9 @@ while True:
     frame = cv2.flip(frame, 1)
     cv2.imshow('Logitech webcam', frame)
     if cv2.waitKey(1) & 0xFF == ord(' '):
-        bot.sendPhoto(chat_id="1871882149", photo=open("a.jpg", "rb"), caption="Siuuuuu!!! At {}.".format(datetime.now().strftime("%H:%M:%S")))
+        img_name = "Photo_{}.jpg".format(datetime.now().strftime("%H%M%S-%d-%m-%Y"))
+        cv2.imwrite(img_name, frame)
+        bot.sendPhoto(chat_id="1871882149", photo=open(img_name, "rb"), caption="Photo taken at {}.".format(datetime.now().strftime("%H:%M:%S-%d/%m/%Y")))
     elif cv2.waitKey(1) & 0xFF == ord('q'):
         break
 
